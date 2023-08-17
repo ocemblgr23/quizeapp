@@ -1,0 +1,90 @@
+[
+  {
+    "questionsId": 1,
+    "question": "The brain of any computer system is?",
+    "options": [
+      {
+        "answer": "Answer 1",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 2",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 3",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 4",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionsId": 2,
+    "question": "Which of the following languages is more suited to a structured program?",
+    "options": [
+      {
+        "answer": "Answer 1",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 2",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 3",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 4",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionsId": 3,
+    "question": "A computer assisted method for the recording and analyzing of existing or hypothetical systems is",
+    "options": [
+      {
+        "answer": "Answer 1",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 2",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 3",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 4",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "questionsId": 4,
+    "question": "What difference does the 5th generation computer have from other generation computers?",
+    "options": [
+      {
+        "answer": "Answer 1",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 2",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 3",
+        "isCorrect": false
+      },
+      {
+        "answer": "Answer 4",
+        "isCorrect": true
+      }
+    ]
+  }
+]
