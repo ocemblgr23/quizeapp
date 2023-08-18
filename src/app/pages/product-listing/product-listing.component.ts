@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IProduct, ProductsService} from "../../shared/products.service";
+import { ProductsService} from "../../shared/products.service";
 import {debounceTime, Observable} from "rxjs";
+import {IProduct} from "../../shared/product.model";
 
 @Component({
   selector: 'app-product-listing',

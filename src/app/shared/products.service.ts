@@ -1,21 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {PRODUCT_API} from "./constants/api-end-point";
+import {IProduct} from "./product.model";
 
-export interface IProduct {
-  id: number
-  title: string
-  price: number
-  description: string
-  category: string
-  image: string
-  rating: IRating
-}
-
-export interface IRating {
-  rate: number
-  count: number
-}
 
 
 @Injectable({
@@ -23,11 +11,10 @@ export interface IRating {
 })
 export class ProductsService {
 
-  private URL="https://fakestoreapi.com/products"
   constructor(private _http:HttpClient) { }
 
   getProducts():Observable<IProduct[]>{
-    return this._http.get<IProduct[]>(this.URL);
+    return this._http.get<IProduct[]>(PRODUCT_API);
   }
 
 }
