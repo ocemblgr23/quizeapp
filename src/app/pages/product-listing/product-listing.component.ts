@@ -1,0 +1,22 @@
+import {Component, OnInit} from '@angular/core';
+import { ProductsService} from "../../shared/products.service";
+import {debounceTime, Observable} from "rxjs";
+import {IProduct} from "../../shared/product.model";
+
+@Component({
+  selector: 'app-product-listing',
+  templateUrl: './product-listing.component.html',
+  styleUrls: ['./product-listing.component.css']
+})
+export class ProductListingComponent implements OnInit{
+
+  $products:Observable<IProduct[]> = this._product.getProducts();
+
+  constructor(private _product:ProductsService) {
+  }
+  ngOnInit() {
+    // this._product.getProducts().subscribe((p:IProduct[])=>{
+    //   console.log(p)
+    // })
+  }
+}

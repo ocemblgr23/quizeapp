@@ -1,5 +1,38 @@
-<h1 class="display-1 text-center py-3">Quize App</h1>
-
-<div class="container">
+<!--<h1 class="display-1 text-center py-3">Quize App</h1>-->
+<!--navbar start-->
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Electronics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Jewelery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            Men's clothing
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <button class="btn">
+      <span class="text-warning fs-2 material-icons md-24">add_shopping_cart</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<!--navbar end-->
+<div class="container-fluid py-3">
   <router-outlet></router-outlet>
 </div>

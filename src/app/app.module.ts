@@ -11,6 +11,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { GameComponent } from './components/game/game.component';
+import { ProductListingComponent } from './pages/product-listing/product-listing.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GameComponent } from './components/game/game.component';
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
-    GameComponent
+    GameComponent,
+    ProductListingComponent
   ],
   imports: [
     BrowserModule,
