@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+</div>
+<div class="container-fluid">
+  <!-- card start -->
+  <div class="d-flex justify-content-center flex-wrap gap-3">
+    <div *ngFor="let p of $products | async" class="card" style="width: 18rem;">
+      <img [src]="p.image"  class="card-img-top h-75 p-5" alt="...">
+      <h4 class="card-header p-3 text-truncate">{{p.title}}</h4>
+      <div class="card-body h-25">
+        <h5 class="card-title lead text-muted">{{p.price | currency:'INR'}}</h5>
+        <p class="card-text lead text-truncate">{{p.description}}</p>
+        <div class="d-flex justify-content-center ">
+          <a href="#" class="btn btn-primary m-1">Add to cart</a>
+          <a href="#" class="btn btn-warning m-1">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- card end-->
+</div>
+
+<!--fixed the break layout *** set the card width to 18rem issue resolve-->
+<!--<div class="container-fluid">-->
+<!--  <div class="d-flex justify-content-center flex-wrap gap-3">-->
+<!--      <div *ngFor="let p of $products | async" class="card" style="width: 18rem;">-->
+<!--        <img [src]="p.image"  class="card-img-top p-5" alt="...">-->
+<!--        <div class="card-header">-->
+<!--          <h4>{{p.title}}</h4>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">{{p.price | currency:'INR'}}</h5>-->
+<!--          <div class="card-text">-->
+<!--            <div class="d-flex justify-content-center ">-->
+<!--              <a href="#" class="btn btn-primary m-1">Add to cart</a>-->
+<!--              <a href="#" class="btn btn-warning m-1">Buy now</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</div>-->
+

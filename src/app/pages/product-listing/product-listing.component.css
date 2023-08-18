@@ -1,0 +1,11 @@
+.p-outer {
+  display: flex;
+
+
+}
+.p-container {
+  display: flex;
+  flex-basis: 30%;
+  gap: 20px;
+
+}
