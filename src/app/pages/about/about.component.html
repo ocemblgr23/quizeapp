@@ -1,1 +1,6 @@
-<p>about works!</p>
+<p>about works {{games.length}}</p>
+<div class="form-group">
+  <input type="text" [(ngModel)]="game" name="game" class="form-control" placeholder="Enter game name">
+</div>
+<app-game [games]="games"></app-game>
+<button (click)="updateGames()" class="btn btn-primary">CLick to Update</button>

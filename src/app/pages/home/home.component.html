@@ -6,26 +6,26 @@
       <section id="mcq-questions" *ngFor="let question of mcq_questions;index as i;">
         <h5 class="card-title text-danger">{{i+1}}. {{question.question}}</h5>
         <div class="card-text py-2">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio1"
+          <div class="form-check form-check-inline" *ngFor="let  opt of question.options;index as i">
+            <input class="form-check-input" formControlName="answer" type="radio" name="answer" [id]="i"
                    value="option1">
-            <label class="form-check-label" for="inlineRadio1">ALU</label>
+            <label class="form-check-label" [for]="i">{{opt.answer}}</label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio2"
-                   value="option2">
-            <label class="form-check-label" for="inlineRadio2">CPU</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio3"
-                   value="option3">
-            <label class="form-check-label" for="inlineRadio3">Control Unit</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio4"
-                   value="option4">
-            <label class="form-check-label" for="inlineRadio4">Memory</label>
-          </div>
+<!--          <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio2"-->
+<!--                   value="option2">-->
+<!--            <label class="form-check-label" for="inlineRadio2">CPU</label>-->
+<!--          </div>-->
+<!--          <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio3"-->
+<!--                   value="option3">-->
+<!--            <label class="form-check-label" for="inlineRadio3">Control Unit</label>-->
+<!--          </div>-->
+<!--          <div class="form-check form-check-inline">-->
+<!--            <input class="form-check-input" formControlName="answer" type="radio" name="answer" id="inlineRadio4"-->
+<!--                   value="option4">-->
+<!--            <label class="form-check-label" for="inlineRadio4">Memory</label>-->
+<!--          </div>-->
         </div>
       </section>
       <button type="submit" class="btn btn-primary mb-3" [disabled]="questionsForm.invalid">Submit</button>

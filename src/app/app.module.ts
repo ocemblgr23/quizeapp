@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { GameComponent } from './components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
