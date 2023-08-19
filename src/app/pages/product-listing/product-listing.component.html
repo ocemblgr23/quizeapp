@@ -1,5 +1,20 @@
 <div class="container-fluid">
-
+  <button class="btn d-flex align-items-center">
+    <i class="bi bi-cart-dash-fill fs-1 text-primary"></i><span class="badge bg-primary rounded-pill">{{cartItems.length}}</span>
+  </button>
+<!--  share data to navbar-->
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <input type="text" (change)="cartService.setSharedData(simpleTest)" [(ngModel)]="simpleTest" name="simpleTest" class="form-control" placeholder="Enter game name">
+      </div>
+      <div class="form-group mt-2">
+        <button class="btn btn-primary" (click)="shareData()">Share</button>
+      </div>
+    </div>
+  </div>
+<!--  share data navbar-->
+  <hr>
 </div>
 <div class="container-fluid">
   <!-- card start -->
@@ -11,8 +26,8 @@
         <h5 class="card-title lead text-muted">{{p.price | currency:'INR'}}</h5>
         <p class="card-text lead text-truncate">{{p.description}}</p>
         <div class="d-flex justify-content-center ">
-          <a href="#" class="btn btn-primary m-1">Add to cart</a>
-          <a href="#" class="btn btn-warning m-1">Buy now</a>
+          <a  class="btn btn-primary m-1" (click)="addToCart(p)">Add to cart</a>
+          <a  class="btn btn-warning m-1">Buy now</a>
         </div>
       </div>
     </div>

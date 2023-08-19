@@ -19,16 +19,24 @@
         <li class="nav-item">
           <a class="nav-link">
             Men's clothing
+            <!-- test the bootstrap icons-->
+<!--            <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>-->
           </a>
         </li>
+        <li class="nav-item">
+          <a  class="nav-link"> {{$sharedMessage|async}}</a>
+        </li>
       </ul>
+      <div class="d-flex flex-row-reverse align-items-center">
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <button class="btn">
-      <span class="text-warning fs-2 material-icons md-24">add_shopping_cart</span>
+<!--      <span class="text-warning fs-2 material-icons md-24">add_shopping_cart</span>-->
+        <i class="bi bi-cart-dash-fill fs-1 text-primary"></i>
       </button>
+      </div>
     </div>
   </div>
 </nav>
