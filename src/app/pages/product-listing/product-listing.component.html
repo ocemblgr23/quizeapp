@@ -22,10 +22,23 @@
     <div *ngFor="let p of $products | async" class="card" style="width: 18rem;">
       <img [src]="p.image"  class="card-img-top h-75 p-5" alt="...">
       <h4 class="card-header p-3 text-truncate">{{p.title}}</h4>
-      <div class="card-body h-25">
+      <div class="card-body h-40">
+        <div class="d-flex justify-content-between">
+          <div class="star-pos">
+<!--            <i class="bi bi-star-fill fs-5 text-warning" *ngFor="let i of [].constructor((p.rating-->
+<!--            .rate| number:'0.0-0'))"></i>-->
+            <i class="bi bi-star-fill fs-5 text-warning"></i>
+            <i class="bi bi-star-fill fs-5 text-warning"></i>
+            <i class="bi bi-star-fill fs-5 text-warning"></i>
+            <i class="bi bi-star-fill fs-5 text-warning"></i>
+            <i class="bi bi-star-half fs-5 text-warning"></i>
+            {{p.rating.rate}}
+          </div>
+          <div class="fw-bold py-1">{{p.rating.count}} ratings</div>
+        </div>
         <h5 class="card-title lead text-muted">{{p.price | currency:'INR'}}</h5>
         <p class="card-text lead text-truncate">{{p.description}}</p>
-        <div class="d-flex justify-content-center ">
+        <div class="d-flex justify-content-center">
           <a  class="btn btn-primary m-1" (click)="addToCart(p)">Add to cart</a>
           <a  class="btn btn-warning m-1">Buy now</a>
         </div>
