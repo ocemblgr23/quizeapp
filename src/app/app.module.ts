@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { GameComponent } from './components/game/game.component';
 import { ProductListingComponent } from './pages/product-listing/product-listing.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductListingComponent } from './pages/product-listing/product-listing
     ContactComponent,
     NotFoundComponent,
     GameComponent,
-    ProductListingComponent
+    ProductListingComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

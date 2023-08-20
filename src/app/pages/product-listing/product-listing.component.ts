@@ -23,7 +23,8 @@ export class ProductListingComponent implements OnInit{
     // })
   }
   addToCart(product:IProduct) {
-    this.cartItems.push(product)
+    // this.cartItems.push(product)
+    this.cartService.cartItemsList(product);
   }
   shareData() {
     this.cartService.setSharedData(this.simpleTest);

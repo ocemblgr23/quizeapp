@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
+import {IProduct} from "./product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 export class CartService {
 
   private sharedDataSubject: BehaviorSubject<string> = new BehaviorSubject<string>('Share Message')
-
+  cartItems:IProduct[]=[];
   constructor() { }
 
   setSharedData(data:string) {
@@ -17,4 +18,13 @@ export class CartService {
   getSharedData(): Observable<string>{
     return this.sharedDataSubject.asObservable();
   }
+
+  cartItemsList(p:IProduct) {
+    this.cartItems.push(p)
+  }
+
+  getCartItems():Observable<IProduct[]>{
+    return  of(this.cartItems);
+  }
+
 }
