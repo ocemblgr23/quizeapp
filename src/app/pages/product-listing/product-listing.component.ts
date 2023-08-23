@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { ProductsService} from "../../shared/products.service";
-import {debounceTime, Observable} from "rxjs";
+import { Observable} from "rxjs";
 import {IProduct} from "../../shared/product.model";
+import {CartService} from "../../shared/cart.service";
 
 @Component({
   selector: 'app-product-listing',
@@ -11,12 +12,21 @@ import {IProduct} from "../../shared/product.model";
 export class ProductListingComponent implements OnInit{
 
   $products:Observable<IProduct[]> = this._product.getProducts();
+  cartItems:IProduct[]=[];
+  simpleTest: string=""
 
-  constructor(private _product:ProductsService) {
+  constructor(private _product:ProductsService,public cartService:CartService) {
   }
   ngOnInit() {
     // this._product.getProducts().subscribe((p:IProduct[])=>{
     //   console.log(p)
     // })
+  }
+  addToCart(product:IProduct) {
+    // this.cartItems.push(product)
+    this.cartService.cartItemsList(product);
+  }
+  shareData() {
+    this.cartService.setSharedData(this.simpleTest);
   }
 }

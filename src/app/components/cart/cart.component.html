@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="display-1 text-warning">{{cartItems.length}} items in your cart</h1>
+  </div>
+  <hr>
+  <div class="container">
+  <button class="btn btn-primary" (click)="testFilterCart()">Check</button>
+    <table class="table" *ngIf="cartItems.length>0">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Unit</th>
+        <th scope="col">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+<!--      duplicate cart item -->
+<!--      <tr *ngFor="let cart of cartItems;index as i;">-->
+<!--        <th scope="row">{{i+1}}</th>-->
+<!--        <td>{{cart.title}}</td>-->
+<!--        <td>{{cart?.category}}</td>-->
+<!--        <td>1</td>-->
+<!--        <td>{{cart.price | currency:'INR'}}</td>-->
+<!--      </tr>-->
+<!--      duplicate cart item -->
+<!--      unique cart item -->
+      <tr *ngFor="let cart of  testFilterCart();index as i;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{cart.title}}</td>
+        <td>{{cart?.category}}</td>
+        <td>{{cart.unit}}</td>
+        <td>{{cart.price | currency:'INR'}}</td>
+      </tr>
+<!--      unique cart item -->
+      <tr>
+        <th></th>
+        <th colspan="3">Total Price</th>
+        <td>{{totalPrice(cartItems) | currency:'INR'}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
