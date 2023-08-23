@@ -1,1 +1,20 @@
-<p>contact works!</p>
+<div class="container-fluid">
+  <div class="container display-5">
+    <p class="fs-2 text-warning">Contact Details</p>
+    <div class="card mb-3 p-3">
+      <ul class="list-group">
+        <li class="list-group-item text-primary" *ngFor="let email of $jsonPlaceholderEmailOnly">
+          {{email}}
+        </li>
+      </ul>
+    </div>
+    <div class="card p-3 ">
+      <ul class="list-group">
+        <li class="list-group-item text-warning" *ngFor="let user of $users">
+          {{user.name}} : {{user.email}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
