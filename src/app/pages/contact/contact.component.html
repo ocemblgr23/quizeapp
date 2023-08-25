@@ -1,6 +1,31 @@
 <div class="container-fluid">
-  <div class="container display-5">
+  <div class="container">
     <p class="fs-2 text-warning">Contact Details</p>
+    <div class="row">
+      <div class="col-md-4 offset-md-1">
+        <div class="p-3">
+          <label for="states">Open this select state</label>
+          <select (change)="onSelect()" class="form-select" [(ngModel)]="selectedState" id="states" aria-label="Default select example">
+            <option selected >None</option>
+            <option [value]="st.state" *ngFor="let st of $states;">{{st.state}}</option>
+          </select>
+          <p class="py-1">You selected: {{selectedState}}</p>
+
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="p-3">
+          <label for="dt">Open this select districts</label>
+          <select  class="form-select" [(ngModel)]="selectedDist"  id="dt" aria-label="Default select example">
+            <option selected >None</option>
+            <option [value]="dt" *ngFor="let dt of districts;">{{dt}}</option>
+          </select>
+          <p class="py-1">You selected: {{selectedDist}}</p>
+
+        </div>
+      </div>
+    </div>
+
     <div class="card mb-3 p-3">
       <ul class="list-group">
         <li class="list-group-item text-primary" *ngFor="let email of $jsonPlaceholderEmailOnly">

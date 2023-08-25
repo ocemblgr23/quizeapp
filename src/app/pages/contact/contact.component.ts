@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, of} from "rxjs";
+import {filter, map, Observable, of} from "rxjs";
+import {CommonutilService, IStateList} from "../../shared/commonutil.service";
 
 export interface IUser {
   id: number
@@ -49,8 +50,13 @@ export class ContactComponent implements OnInit{
   private API_POINT = "https://jsonplaceholder.typicode.com/users"
   $jsonPlaceholderEmailOnly:string[] = [];
   $users:User[]=[]
+  selectedState = 'None';
+  selectedDist="None";
+  $states:IStateList[]= [];
 
-  constructor(private htpClient:HttpClient) {
+  districts?:string[]=[];
+
+  constructor(private htpClient:HttpClient,private commonUtil:CommonutilService) {
 
   }
 
@@ -59,14 +65,38 @@ export class ContactComponent implements OnInit{
     this.mapDemo();
     // return only email from jsonplaceholder
     this.loadUsers().subscribe(email=>{
-      console.log(email)
       this.$jsonPlaceholderEmailOnly = email;
     })
     // return only name,email from jsonplaceholder
     this.loadUsersEmail().subscribe(users=>{
       this.$users = users
     })
+  //   return states list
+  this.loadStates().subscribe((st)=>{
+    this.$states=st;
+  })
   }
+
+  loadStates() {
+    return this.commonUtil.getIndiaStates().pipe(
+      map(st=>st)
+    )
+  }
+
+  onSelect() {
+    const dist =  this.commonUtil.getIndiaStates().pipe(
+      map((sts)=>sts),
+      map((sts)=>{
+        return sts.filter(st=>st.state===this.selectedState)
+      })
+    );
+    dist.subscribe(dists=>{
+      console.log('dist',dists[0].districts);
+      this.districts = dists[0].districts;
+    })
+
+  }
+
 
   mapDemo() {
     const age = of([3,5,7,8,10]);

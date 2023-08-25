@@ -11,16 +11,12 @@ import {IProduct} from "./product.model";
 })
 export class ProductsService {
 
-  private LOC_JSON_FILE = "../../assets/products.json"
+
 
   constructor(private _http:HttpClient) { }
 
   getProducts():Observable<IProduct[]>{
     return this._http.get<IProduct[]>(PRODUCT_API);
   }
-
-  getProductsFromLoc():Observable<IProduct[]>{
-    return this._http.get<IProduct[]>(this.LOC_JSON_FILE);
-  }
-
+  
 }
