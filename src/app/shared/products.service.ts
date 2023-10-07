@@ -18,5 +18,9 @@ export class ProductsService {
   getProducts():Observable<IProduct[]>{
     return this._http.get<IProduct[]>(PRODUCT_API);
   }
-  
+
+  getTodos(id:number) {
+    return this._http.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  }
+
 }
